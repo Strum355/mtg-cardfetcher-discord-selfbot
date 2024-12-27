@@ -1,0 +1,13 @@
+[project]
+name = "mtg-cardfetcher-discord-selfbot"
+version = "0.1.0"
+description = "sample text"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "discord-py-self>=2.0.0",
+    "requests>=2.32.3",
+]
+
+[project.scripts]
+cli = "main:main"
