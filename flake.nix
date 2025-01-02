@@ -41,7 +41,7 @@
         overlay
         (_final: _prev: {
           discord-protos = _prev.discord-protos.overrideAttrs (oldAttrs: {
-            buildInputs = (oldAttrs.buildInputs or []) ++ _final.resolveBuildSystem ( {setuptools = [];}); 
+            buildInputs = (oldAttrs.buildInputs or []) ++ _final.resolveBuildSystem ({ setuptools = []; }); 
           });
         })
       ]

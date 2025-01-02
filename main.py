@@ -39,4 +39,13 @@ class MyClient(discord.Client):
         
 def main():
     client = MyClient()
-    client.run(environ['TOKEN'])
+    if 'TOKEN' in environ:
+        client.run(environ['TOKEN'])
+    elif 'TOKEN_FILE' in environ:
+        token = None
+        with open(environ['TOKEN_FILE'], mode='r') as f:
+            token = f.read().strip()
+        client.run(token)
+    else:
+        print("neither TOKEN nor TOKEN_FILE were set")
+        exit(1)
